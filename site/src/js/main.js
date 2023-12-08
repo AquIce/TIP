@@ -58,12 +58,45 @@ const events = [
     },
 ]
 
-const h_unit_offset = 32
+const h_unit_offset = 42
+const event_width = 300
+
+const insideDiv = (div, event, is_left) => {
+	const arrow_div = document.createElement('div')
+	arrow_div.style.height = '100%'
+	arrow_div.innerHTML = `<img src="./src/img/arrow.png" alt="arrow" class="${is_left ? 'right-arrow' : 'left-arrow'}">`
+	const name_div = document.createElement('div')
+	name_div.innerHTML = event.name
+	const date_div = document.createElement('div')
+	date_div.innerHTML = event.date
+	div.appendChild(arrow_div)
+	div.appendChild(name_div)
+	div.appendChild(date_div)
+	div.style.display = 'flex'
+	div.style.flexDirection = 'row'
+	div.style.justifyContent = 'space-between'
+	div.style.alignItems = 'center'
+	div.style.padding = '0 15px 0 15px'
+}
 
 const makeEvent = (event, is_left) => {
     const h_offset = (2000 - event.date) * h_unit_offset
     const color = Event.Colors(event.type)
-    console.log(event.date, h_offset, color, is_left)
+	const event_div = document.createElement('div')
+	event_div.classList.add('event')
+	event_div.style.marginTop = `${h_offset}px`
+	event_div.style.backgroundColor = color
+	event_div.style.height = `${h_unit_offset}px`
+	event_div.style.width = `${event_width}px`
+	insideDiv(event_div, event, is_left)
+	if(is_left) {
+		event_div.style.marginRight = `${h_unit_offset}px`
+		event_div.style.marginLeft = `calc(100% - ${event_width}px - ${h_unit_offset + 15 * 2}px)` 
+		event_div.style.flexDirection = 'row-reverse'
+	} else {
+		event_div.style.marginLeft  = `${h_unit_offset}px`
+	}
+	document.querySelector(`#${is_left ? 'left' : 'right'}-events`).appendChild(event_div)
 }
 
 window.onload = () => {

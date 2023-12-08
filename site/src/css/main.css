@@ -52,6 +52,15 @@ main {
     font-weight: bold;
 }
 
-/*#left-events, #right-events, #timeline {
-    border: solid red;
-}*/
+.event {
+	cursor: pointer;
+	user-select: none;
+}
+
+.right-arrow, .left-arrow {
+	height: 50%;
+	margin-top: 30%;
+}
+.left-arrow {
+	rotate: 180deg;;
+}
