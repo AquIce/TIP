@@ -32,7 +32,6 @@ main {
 }
 
 #main-container {
-    height: 3264px;
     width: 1000px;
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
@@ -42,13 +41,9 @@ main {
 }
 
 #timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--midnight-green);
-    padding: 10px;
+	position: relative;
     font-size: 28px;
+    background-color: var(--midnight-green);
     font-weight: bold;
 }
 
@@ -58,9 +53,10 @@ main {
 }
 
 .right-arrow, .left-arrow {
-	height: 50%;
-	margin-top: 30%;
+	width: 35px;
+	margin-top: calc(100% - 35px);
 }
-.left-arrow {
-	rotate: 180deg;;
+
+#left-events, #right-events {
+	position: relative;
 }
