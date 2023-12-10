@@ -1,3 +1,9 @@
+/*
+	TODO:
+		- Fix hitboxes (margin -> padding?)
+		- Add animations (on expand)
+*/
+
 const Event =  {
     Types: {
         conflict: 0,
@@ -45,7 +51,7 @@ const events = [
     },
     {
         'name': 'Villa turque',
-        'date': 1988,
+        'date': 1994,
         'type': Event.Types.artch,
         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod [img_villa] tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'refs': {
@@ -55,7 +61,7 @@ const events = [
     },
     {
         'name': 'Crash boursier',
-        'date': 1994,
+        'date': 1988,
         'type': Event.Types.economy,
         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         'refs': {},
@@ -127,6 +133,9 @@ const findName = name => {
 const extendInvert = (event, full_div) => {
 	if(event.extended) {
 		destroyContent(full_div)
+		for(const ev of document.querySelectorAll('.full-div')) {
+			ev.classList.remove('closed')
+		}
 	} else {
 		const full_divs = document.querySelectorAll('.full-div')
 		for(const ev of full_divs) {
@@ -134,6 +143,8 @@ const extendInvert = (event, full_div) => {
 			if(events[index].extended) {
 				events[index].extended = false
 				destroyContent(ev)
+			} else {
+				ev.classList.remove('closed')
 			}
 		}
 
@@ -170,8 +181,40 @@ const extendInvert = (event, full_div) => {
 
 
 		full_div.appendChild(overdiv)
+
+		const side_divs = full_div.parentNode.children
+		for(const ev of side_divs) {
+			if(
+				parseInt(ev.style.top.replace('px', '')) < parseInt(full_div.style.top.replace('px', '')) + full_div.offsetHeight &&
+				parseInt(ev.style.top.replace('px', '')) > parseInt(full_div.style.top.replace('px', '')) &&
+				ev !== full_div	
+			) {
+				ev.classList.add('closed')
+			} else {
+				ev.classList.remove('closed')
+			}
+		}
 	}
 	event.extended = !event.extended
+	for(const ev of document.querySelectorAll('.full-div')) {
+		if(ev.classList.contains('closed')) {
+			for(const e of ev.firstChild.children) {
+				e.style.display = 'none'
+			}
+			ev.style.width = '50px'
+			ev.firstChild.style.marginLeft = '7.5px'
+			ev.firstChild.style.marginRight = '7.5px'
+			ev.firstChild.firstChild.style.display = 'block'
+		} else if (ev.firstChild.lastChild.style.display === 'none') {
+			for(const e of ev.firstChild.children) {
+				e.style.display = 'block'
+			}
+			ev.style.width = `${event_width}px`
+			ev.firstChild.style.marginLeft = '15px'
+			ev.firstChild.style.marginRight = '15px'
+		}
+	}
+	
 	return event
 }
 
@@ -209,6 +252,7 @@ const makeEvent = (event, is_left) => {
 	event_div.style.height = `${h_unit_offset}px`
 	event_div.style.width = 'calc(100% - 30px)'
 	event_div.style.marginLeft = '15px'
+	event_div.style.marginRight = '15px'
 
 	// Inside div setup
 	insideDiv(event_div, event, is_left)
@@ -219,6 +263,7 @@ const makeEvent = (event, is_left) => {
 		event_div.firstChild.firstChild.style.rotate = '180deg'
 	} else {
 		event_div.style.flexDirection = 'row-reverse'
+		full_div.style.alignItems = 'end'
 		full_div.style.left  = `${h_unit_offset}px`
 	}
 
@@ -238,7 +283,7 @@ window.onload = () => {
 
 	// Sort events by date inversed but then display them in the right order
 	events.sort(compareByDate)
-    for(let i = events.length - 1; i >= 0; i--) {
+    for(let i = 0; i < events.length; i++) {
         const event = events[i]
 		prepareEvent(event)
 		event.extended = false
