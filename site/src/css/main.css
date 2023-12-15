@@ -54,7 +54,6 @@ main {
 
 .right-arrow, .left-arrow {
 	width: 35px;
-	margin-top: calc(100% - 35px);
 }
 
 #left-events, #right-events {

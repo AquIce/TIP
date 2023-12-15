@@ -23,6 +23,90 @@ const Event =  {
 
 const events = [
     {
+        'name': 'Hermann Alexandre de Pourtalès Jeux Olympiques',
+        'date': 1900,
+        'type': Event.Types.sport,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Maison Blanche',
+        'date': 1912,
+        'type': Event.Types.artch,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Villa Schwob',
+        'date': 1916,
+        'type': Event.Types.artch,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Hôtel de ville du Locle',
+        'date': 1917,
+        'type': Event.Types.artch,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Première guerre mondiale',
+        'date': 1914,
+        'type': Event.Types.conflict,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Deuxième guerre mondiale',
+        'date': 1939,
+        'type': Event.Types.conflict,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    {
+        'name': 'Saut à ski du Locle',
+        'date': 1932,
+        'type': Event.Types.sport,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+
+    {
+        'name': 'Tunnel de la vue des alpes',
+        'date': 1989,
+        'type': Event.Types.economy,
+        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+    
+]
+/*[
+    {
         'name': 'Guerre',
         'date': 1998,
         'type': Event.Types.conflict,
@@ -67,7 +151,7 @@ const events = [
         'refs': {},
         'tags': [],
     },
-]
+]*/
 
 const prepareEvent = event => {
 	if(event.refs) {
@@ -89,9 +173,13 @@ const insideDiv = (div, event, is_left) => {
 	/**
 	 * Div containing the arrow
 	 */
-	const arrow_div = document.createElement('div')
-	arrow_div.innerHTML = `<img src="./src/img/arrow.png" alt="arrow" class="${is_left ? 'right-arrow' : 'left-arrow'}">`
-	
+	//const arrow_div = document.createElement('div')
+	//arrow_div.innerHTML = `<img src="./src/img/arrow.png" alt="arrow" class="${is_left ? 'right-arrow' : 'left-arrow'}">`
+	const arrow_div = document.createElement('img')
+	arrow_div.src = './src/img/arrow.png'
+	arrow_div.alt = 'arrow'
+	arrow_div.classList.add(is_left ? 'right-arrow' : 'left-arrow')
+
 	/**
 	 * Div containing the name
 	 */
@@ -118,7 +206,6 @@ const insideDiv = (div, event, is_left) => {
 
 const destroyContent = full_div => {
 	full_div.style.width = `${event_width}px`
-	full_div.style.height = `${h_unit_offset}px`
 	full_div.removeChild(full_div.lastChild)
 }
 
@@ -148,35 +235,32 @@ const extendInvert = (event, full_div) => {
 			}
 		}
 
-		
 		full_div.style.width = `${event_width + 100}px`
-		full_div.style.height = 'auto'
 
 		/**
 		 * Div containing the event's text
 		 */
 		const overdiv = document.createElement('div')
 		full_div.style.marginLeft = '0'
-		const align_div = document.createElement('div')
-		align_div.style.backgroundColor = '#f5f5f5'
 		const text_div = document.createElement('div')
 		text_div.classList.add('text-div')
 		text_div.innerHTML = `${event.text}`
-		text_div.style.margin = '15px'
-		text_div.style.color = 'white'
+		text_div.style.backgroundColor = event.color
+		text_div.style.marginLeft = '15px'
+		text_div.style.marginRight = '15px'
+		text_div.style.padding = '15px'
+		text_div.style.color = 'white' // Change to dynamic
 		text_div.style.fontSize = '16px'
-		text_div.style.textAlign = 'justify'
+		text_div.style.width = 'calc(100% - 95px)'
+		overdiv.appendChild(text_div)
 
-		overdiv.style.display = 'grid'
+		overdiv.style.display = 'flex'
+		overdiv.style.justifyContent = 'end'
 
 		if(Array.from(document.querySelector('#left-events').children).indexOf(full_div) !== -1) {
-			overdiv.appendChild(text_div)
-			overdiv.appendChild(align_div)
-			overdiv.style.gridTemplateColumns = '1fr 50px'
+			overdiv.style.justifyContent = 'start'
 		} else {
-			overdiv.appendChild(align_div)
-			overdiv.appendChild(text_div)
-			overdiv.style.gridTemplateColumns = '50px 1fr'
+			overdiv.style.justifyContent = 'end'
 		}
 
 
@@ -201,17 +285,13 @@ const extendInvert = (event, full_div) => {
 			for(const e of ev.firstChild.children) {
 				e.style.display = 'none'
 			}
-			ev.style.width = '50px'
-			ev.firstChild.style.marginLeft = '7.5px'
-			ev.firstChild.style.marginRight = '7.5px'
+			ev.style.width = '65px'
 			ev.firstChild.firstChild.style.display = 'block'
 		} else if (ev.firstChild.lastChild.style.display === 'none') {
 			for(const e of ev.firstChild.children) {
 				e.style.display = 'block'
 			}
 			ev.style.width = `${event_width}px`
-			ev.firstChild.style.marginLeft = '15px'
-			ev.firstChild.style.marginRight = '15px'
 		}
 	}
 	
@@ -225,20 +305,16 @@ const makeEvent = (event, is_left) => {
 	 */
 	const h_offset = (2000 - event.date) * h_unit_offset + 20
 	
-	/**
-	 * Color of the event (depends on the type)
-	 */
-    const color = Event.Colors(event.type)
+	event.color = Event.Colors(event.type)
 	
 	/**
 	 * Div containing the event
 	 */
 	const full_div = document.createElement('div')
 	full_div.classList.add('full-div')
-	full_div.style.backgroundColor = color
 	full_div.style.position = 'absolute'
 	full_div.style.top = `${h_offset}px`
-	full_div.style.height = `${h_unit_offset}px`
+	full_div.style.height = 'auto'
 	full_div.style.width = `${event_width}px`
 	full_div.style.display = 'flex'
 	full_div.style.flexDirection = 'column'
@@ -246,13 +322,15 @@ const makeEvent = (event, is_left) => {
 	
 	/**
 	 * Div containing the event's content
-	 */
+	*/
 	const event_div = document.createElement('div')
 	event_div.classList.add('event')
+	event_div.style.backgroundColor = event.color
 	event_div.style.height = `${h_unit_offset}px`
 	event_div.style.width = 'calc(100% - 30px)'
 	event_div.style.marginLeft = '15px'
 	event_div.style.marginRight = '15px'
+	event_div.style.padding = '5px 15px 5px 15px'
 
 	// Inside div setup
 	insideDiv(event_div, event, is_left)
@@ -260,7 +338,7 @@ const makeEvent = (event, is_left) => {
 	// Setup for right or left div
 	if(is_left) {
 		full_div.style.right = `${h_unit_offset}px`
-		event_div.firstChild.firstChild.style.rotate = '180deg'
+		event_div.firstChild.style.rotate = '180deg'
 	} else {
 		event_div.style.flexDirection = 'row-reverse'
 		full_div.style.alignItems = 'end'
