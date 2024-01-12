@@ -34,7 +34,7 @@ main {
 }
 
 #main-container {
-    width: 1000px;
+    width: 1100px;
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
     padding: 50px;
@@ -63,4 +63,8 @@ main {
 
 #left-events, #right-events {
 	position: relative;
+}
+
+.full-div {
+    border-radius: 10px;
 }

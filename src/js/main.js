@@ -166,7 +166,7 @@ const prepareEvent = event => {
 }
 
 const h_unit_offset = 42
-const event_width = 300
+const event_width = 350
 
 const insideDiv = (div, event, is_left) => {
 	
@@ -202,7 +202,11 @@ const insideDiv = (div, event, is_left) => {
 	div.style.alignItems = 'center'
 }
 
-const destroyContent = full_div => {
+const destroyContent = (full_div, cancel=true) => {
+	if(cancel && full_div.children.length > 1) {
+		full_div.firstChild.style.flexDirection = full_div.firstChild.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse'
+		full_div.firstChild.firstChild.style.rotate = full_div.firstChild.firstChild.style.rotate === '180deg' ? '0deg' : '180deg'
+	}
 	full_div.style.width = `${event_width}px`
 	full_div.removeChild(full_div.lastChild)
 }
@@ -219,7 +223,7 @@ const extendInvert = (event, full_div, is_left) => {
 	full_div.firstChild.style.flexDirection = full_div.firstChild.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse'
 	full_div.firstChild.firstChild.style.rotate = full_div.firstChild.firstChild.style.rotate === '180deg' ? '0deg' : '180deg'
 	if(event.extended) {
-		destroyContent(full_div)
+		destroyContent(full_div, false)
 		for(const ev of document.querySelectorAll('.full-div')) {
 			ev.classList.remove('closed')
 		}
@@ -243,8 +247,6 @@ const extendInvert = (event, full_div, is_left) => {
 
 		full_div.style.width = `${event_width + 100}px`
 
-		console.log(full_div.firstChild.firstChild)
-
 		/**
 		 * Div containing the event's text
 		 */
@@ -254,8 +256,6 @@ const extendInvert = (event, full_div, is_left) => {
 		text_div.classList.add('text-div')
 		text_div.innerHTML = `${event.text}`
 		text_div.style.backgroundColor = event.color
-		text_div.style.marginLeft = '15px'
-		text_div.style.marginRight = '15px'
 		text_div.style.padding = '15px'
 		text_div.style.color = 'white' // Change to dynamic
 		text_div.style.fontSize = '16px'
@@ -336,8 +336,6 @@ const makeEvent = (event, is_left) => {
 	event_div.style.backgroundColor = event.color
 	event_div.style.height = `${h_unit_offset}px`
 	event_div.style.width = 'calc(100% - 30px)'
-	event_div.style.marginLeft = '15px'
-	event_div.style.marginRight = '15px'
 	event_div.style.padding = '5px 15px 5px 15px'
 
 	// Inside div setup
