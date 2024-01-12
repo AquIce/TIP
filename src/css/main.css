@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    /*
+        Color palette
+        https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c-6564db
+    */
+    --bright-pink: #ef476f; /* Conflit */
+    --sunglow: #ffd166; /* Economie */
+    --emerald: #06d6a0; /* Sport */
+    --slate-blue: #6564db; /* Politique */
+    --midnight-green: #073b4c; /* Frise */
+    --blue-ncs: #118ab2; /* Art/Architecture */
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    background-image: url('../img/background.jpg');
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#main-container {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+}
+
+#timeline {
+	position: relative;
+    font-size: 28px;
+    background-color: var(--midnight-green);
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+}
+
+.event {
+	cursor: pointer;
+	user-select: none;
+}
+
+.right-arrow, .left-arrow {
+	width: 35px;
+}
+
+#left-events, #right-events {
+	position: relative;
+}
