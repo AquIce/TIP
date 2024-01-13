@@ -131,3 +131,16 @@ XXème siècle
 - Communes
 - Canton
 - Écoles
+
+# Notes 
+
+- Balises accessibilité pour personnes en situation de handicap
+
+# Catégories
+
+- Conflits
+- Economie
+- Sport/Loisirs
+- Politique
+- Art/Architecture
+- Personnalités
