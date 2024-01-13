@@ -246,6 +246,7 @@ const extendInvert = (event, full_div, is_left) => {
 		}
 
 		full_div.style.width = `${event_width + 100}px`
+		console.log(full_div.style.width)
 
 		/**
 		 * Div containing the event's text
@@ -299,7 +300,7 @@ const extendInvert = (event, full_div, is_left) => {
 			for(const e of ev.firstChild.children) {
 				e.style.display = 'block'
 			}
-			ev.style.width = `${event_width}px`
+			ev.style.width = ev === full_div && event.extended ? `${event_width + 100}px` : `${event_width}px`
 		}
 	}
 	
