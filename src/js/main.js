@@ -246,7 +246,6 @@ const extendInvert = (event, full_div, is_left) => {
 		}
 
 		full_div.style.width = `${event_width + 100}px`
-		console.log(full_div.style.width)
 
 		/**
 		 * Div containing the event's text
