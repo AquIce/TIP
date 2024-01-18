@@ -18,7 +18,6 @@
 }
 
 html {
-    background-image: url('../img/background.jpg');
     background-attachment: fixed;
     background-size:cover;
 }

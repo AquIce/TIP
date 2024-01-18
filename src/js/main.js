@@ -363,7 +363,7 @@ const makeEvent = (event, is_left) => {
 	/**
 	 * Offset from the top of the page (depends on the date)
 	 */
-	const h_offset = (2000 - event.date) * H_UNIT_OFFSET + 20
+	const h_offset = (MAX_YEAR - event.date) * H_UNIT_OFFSET + 20
 	
 	event.color = Event.Colors(event.type)
 	
@@ -420,6 +420,7 @@ const makeEvent = (event, is_left) => {
 const compareByDate = (a, b) => b.date - a.date
 
 window.onload = () => {
+	document.querySelector('html').style.backgroundImage = `url('src/img/background${Math.floor(Math.random() * 5)}.jpg')`
 	// Set height of the main container
 	const main_container = document.querySelector('#main-container')
 	main_container.style.height = `${YEARS * H_UNIT_OFFSET + 90}px`
