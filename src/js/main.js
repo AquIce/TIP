@@ -94,7 +94,6 @@ const events = [
 		},
         'tags': [],
     },
-
     {
         'name': 'Tunnel de la vue des alpes',
         'date': 1989,
@@ -105,7 +104,46 @@ const events = [
 		},
         'tags': [],
     },
-    
+    {
+        'name': 'Hockey Club La Chaux-de-Fonds',
+        'date': 1919,
+        'type': Event.Types.sport,
+        'text': 'Le 6 février 1919 la section hockey apparaît pour la première fois dans la ville. À cette époque la mauvaise qualité de glace pousse parfois le club à déménager sur le Lac des Taillères. Il faudra attendre 1951 pour que le club soit pour la première fois champion de ligue nationale B (LNB 2ème division suisse). Après 4 titres en 2ème division et un aller-retour entre la ligue nationale A (LNA 1er division suisse) et la B, le club fêtera son premier titre de LNA fin de saison 1967/1968. Les 5 saisons suivantes seront un énorme succès avec 5 nouveaux titres de champion Suisse. Aujourd’hui le club Chaux-de-Fonnier évolue en 2ème division suisse et est soutenu par toute une région.',
+        'refs': {
+			
+		},
+        'tags': [],
+    },
+	{
+		'name': 'Première Braderie',
+		'date': 1932,
+		'type': Event.Types.economy,
+		'text': 'La braderie a été créée en 1932 pendant une grande crise économique qui touchait la Chaux-de fonds. La ville, qui comptait beaucoup de chômeurs et de grandes quantités de marchandises invendues, a décidé de créer une grande foire qui permettrait aux commerçants de vider leurs stocks. Aujourd’hui la braderie est l’une des plus grandes fête Chaux-de-Fonnières et réunit des habitants de toute la région pour ses animations et ses cortèges.',
+		'refs': {
+			
+		},
+        'tags': [],
+	},
+	{
+		'name': 'Première Braderie',
+		'date': 1932,
+		'type': Event.Types.economy,
+		'text': 'Lors de la Grande Dépression à La Chaux-de-Fonds, où 8000 personnes étaient sans emploi parmi les 40 000 habitants, la Braderie a été lancée. À cette époque, il y avait un surplus de marchandises invendues. La fête a permis aux commerçants de vendre ces articles à bas prix, offrant ainsi aux travailleurs la possibilité d\'acheter des choses à moindre coût pour améliorer leur quotidien. [img_0] Aujourd\'hui, la Braderie est devenue la plus grande fête de La Chaux-de-Fonds. Elle attire non seulement les habitants de la ville, mais aussi ceux des environs, attirés par les défilés et les animations.',
+		'refs': {
+			'img_0': 'https://le-o.ch/wp-content/uploads/elementor/thumbs/photo_carrousel_c_-Museedhistoire-pu41vrk9i0c9bmx3akwc6m10cuycwfi87ae70fdkxc.jpg'
+		},
+        'tags': [],
+	},
+	{
+		'name': 'Création du Conservatoire de musique de La Chaux-de-Fonds',
+		'date': 1927,
+		'type': Event.Types.sport,
+		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
+		'refs': {
+			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
+		},
+        'tags': [],
+	}
 ]
 // [
 //     {
