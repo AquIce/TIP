@@ -244,6 +244,10 @@ const MAX_YEAR = 2000
  * The width of the timeline
  */
 const TIMELINE_WIDTH = 100
+/**
+ * The gap between two dates displayed in the timeline
+ */
+const TIMELINE_GAP_YEARS = 25
 
 /**
  * Creates the inside div of an event div
@@ -478,6 +482,11 @@ window.onload = () => {
 	const main_container = document.querySelector('#main-container')
 	main_container.style.height = `${YEARS * H_UNIT_OFFSET + 90}px`
 	main_container.style.gridTemplateColumns = `1fr ${TIMELINE_WIDTH}px 1fr`;
+	for(let i = MAX_YEAR; i >= MAX_YEAR - YEARS; i -= TIMELINE_GAP_YEARS) {
+		const div = document.createElement('div')
+		div.innerHTML = i
+		main_container.children[1].appendChild(div)
+	}
 
 	// Sort events by date inversed but then display them in the right order
 	events.sort(compareByDate)
