@@ -10,13 +10,15 @@ const Event =  {
         sport: 2,
         politics: 3,
         artch: 4,
+		personnality: 5,
     },
     Colors: color => [
         '#ef476f',
         '#ffd166',
         '#06d6a0',
         '#6564db',
-        '#118ab2'
+        '#118ab2',
+		'#ff964f'
     ][color],
 } 
 
@@ -105,7 +107,7 @@ const events = [
         'tags': [],
     },
     {
-        'name': 'Hockey Club La Chaux-de-Fonds',
+        'name': 'Création du HCC',
         'date': 1919,
         'type': Event.Types.sport,
         'text': 'Le 6 février 1919 la section hockey apparaît pour la première fois dans la ville. À cette époque la mauvaise qualité de glace pousse parfois le club à déménager sur le Lac des Taillères. Il faudra attendre 1951 pour que le club soit pour la première fois champion de ligue nationale B (LNB 2ème division suisse). Après 4 titres en 2ème division et un aller-retour entre la ligue nationale A (LNA 1er division suisse) et la B, le club fêtera son premier titre de LNA fin de saison 1967/1968. Les 5 saisons suivantes seront un énorme succès avec 5 nouveaux titres de champion Suisse. Aujourd’hui le club Chaux-de-Fonnier évolue en 2ème division suisse et est soutenu par toute une région.',
@@ -138,6 +140,16 @@ const events = [
 		'name': 'Création du Conservatoire de musique de La Chaux-de-Fonds',
 		'date': 1927,
 		'type': Event.Types.sport,
+		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
+		'refs': {
+			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
+		},
+        'tags': [],
+	},
+	{
+		'name': 'Test',
+		'date': 1990,
+		'type': Event.Types.personnality,
 		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
 		'refs': {
 			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
@@ -201,7 +213,10 @@ const prepareEvent = event => {
 	if(event.refs) {
 		for(const ref of Object.keys(event.refs)) {
 			if(ref.startsWith('img_')) {
-				event.text = event.text.replace(`[${ref}]`, `<style>img { width: 100% }</style><img src="${!event.refs[ref].startsWith('http') ? './src/img/' : ''}${event.refs[ref]}" alt="${event.refs[ref].split('.')[0]}">`)
+				// Preload the image to prevent height calculation problems
+				const img = new Image()
+				img.src = `${!event.refs[ref].startsWith('http') ? './src/img/' : ''}${event.refs[ref]}`
+				event.text = event.text.replace(`[${ref}]`, `<style>img { width: 100% }</style><img src="${img.src}" alt="${event.refs[ref].split('.')[0]}">`)
 			} else {
 				event.text = event.text.replace(`[${ref}]`, `<a href="${event.refs[ref]}">${ref}</a>`)
 			}
