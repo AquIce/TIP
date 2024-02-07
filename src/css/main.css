@@ -11,7 +11,7 @@
     --slate-blue: #6564db; /* Politique */
     --midnight-green: #073b4c; /* Frise */
     --blue-ncs: #118ab2; /* Art/Architecture */
-    --orange: #ff964f;
+    --orange: #ff964f; /* Personnalités */
 }
 
 * {
@@ -21,6 +21,10 @@
 html {
     background-attachment: fixed;
     background-size:cover;
+}
+
+body {
+    margin: 0;
 }
 
 h1 {
@@ -40,6 +44,18 @@ main {
     border-radius: 50px;
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
+    margin-bottom: 50px;
+}
+
+#color-index {
+    width: fit-content;
+    padding: 25px;
+    background-color: #073b4c88;
+    backdrop-filter: blur(5px);
+    color: white;
+    border-radius: 0 15px 0 0;
+    position: fixed; 
+    bottom: 0; 
 }
 
 #timeline {

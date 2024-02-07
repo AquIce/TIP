@@ -503,4 +503,33 @@ window.onload = () => {
 		milestone.style.top = `${(MAX_YEAR - parseInt(milestone.innerHTML)) * H_UNIT_OFFSET + 25}px`
 		milestone.style.left = `${(TIMELINE_WIDTH - milestone.offsetWidth) / 2}px`
 	}
+
+	const colors = {
+		'#ef476f': 'Conflit',
+        '#ffd166': 'Economie',
+        '#06d6a0': 'Sport et Loisirs',
+        '#6564db': 'Politique',
+        '#118ab2': 'Art / Architecture',
+        '#ff964f': 'Personnalités'
+	}
+
+	const colorIndex = document.querySelector('#color-index')
+	for(const [color, theme] of Object.entries(colors)) {
+		const child = document.createElement('div')
+		child.style.display = 'flex'
+		child.style.gap = '10px'
+		child.style.marginBottom = '5px'
+		const circle = document.createElement('div')
+		circle.style.width = '20px'
+		circle.style.height = '20px'
+		circle.style.borderRadius = '50%';
+		circle.style.backgroundColor = color
+		child.appendChild(circle)
+		const text = document.createElement('p')
+		text.innerHTML = theme
+		text.style.margin = '0'
+		child.appendChild(text)
+		colorIndex.appendChild(child)
+		console.log(child)
+	}
 }
