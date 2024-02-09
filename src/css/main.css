@@ -3,7 +3,7 @@
 :root {
     /*
         Color palette
-        https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c-6564db
+        https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c-6564db-ff964f
     */
     --bright-pink: #ef476f; /* Conflit */
     --sunglow: #ffd166; /* Economie */
@@ -50,7 +50,7 @@ main {
 #color-index {
     width: fit-content;
     padding: 25px;
-    background-color: #073b4c88;
+    background-color: #041E2688;
     backdrop-filter: blur(5px);
     color: white;
     border-radius: 0 15px 0 0;
@@ -74,6 +74,7 @@ main {
 
 .right-arrow, .left-arrow {
 	width: 35px;
+    filter: brightness(500%);
 }
 
 #left-events, #right-events {

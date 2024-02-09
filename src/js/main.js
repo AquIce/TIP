@@ -1,8 +1,3 @@
-/*
-	TODO:
-		- Add animations (on expand)
-*/
-
 const Event =  {
     Types: {
         conflict: 0,
@@ -20,92 +15,20 @@ const Event =  {
         '#118ab2',
 		'#ff964f'
     ][color],
-} 
+	TextColors: color => [
+		'black',
+		'black',
+		'black',
+		'white',
+		'black',
+		'black'
+	][color],
+}
 
 /**
  * List of events
  */
-const events = [
-    {
-        'name': 'Hermann Alexandre de Pourtalès Jeux Olympiques',
-        'date': 1900,
-        'type': Event.Types.sport,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Maison Blanche',
-        'date': 1912,
-        'type': Event.Types.artch,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Villa Schwob',
-        'date': 1916,
-        'type': Event.Types.artch,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Hôtel de ville du Locle',
-        'date': 1917,
-        'type': Event.Types.artch,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Première guerre mondiale',
-        'date': 1914,
-        'type': Event.Types.conflict,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Deuxième guerre mondiale',
-        'date': 1939,
-        'type': Event.Types.conflict,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Saut à ski du Locle',
-        'date': 1932,
-        'type': Event.Types.sport,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
-    {
-        'name': 'Tunnel de la vue des alpes',
-        'date': 1989,
-        'type': Event.Types.economy,
-        'text': 'Lorem ipsum dolor sit amet, , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-        'refs': {
-			
-		},
-        'tags': [],
-    },
+const E = [
     {
         'name': 'Création du HCC',
         'date': 1919,
@@ -114,37 +37,37 @@ const events = [
         'refs': {
 			
 		},
-        'tags': [],
+        'tags': [
+			'sport',
+			'social'
+		],
     },
 	{
 		'name': 'Première Braderie',
-		'date': 1932,
-		'type': Event.Types.economy,
-		'text': 'La braderie a été créée en 1932 pendant une grande crise économique qui touchait la Chaux-de fonds. La ville, qui comptait beaucoup de chômeurs et de grandes quantités de marchandises invendues, a décidé de créer une grande foire qui permettrait aux commerçants de vider leurs stocks. Aujourd’hui la braderie est l’une des plus grandes fête Chaux-de-Fonnières et réunit des habitants de toute la région pour ses animations et ses cortèges.',
-		'refs': {
-			
-		},
-        'tags': [],
-	},
-	{
-		'name': 'Première Braderie',
-		'date': 1932,
+		'date': 1933,
 		'type': Event.Types.economy,
 		'text': 'Lors de la Grande Dépression à La Chaux-de-Fonds, où 8000 personnes étaient sans emploi parmi les 40 000 habitants, la Braderie a été lancée. À cette époque, il y avait un surplus de marchandises invendues. La fête a permis aux commerçants de vendre ces articles à bas prix, offrant ainsi aux travailleurs la possibilité d\'acheter des choses à moindre coût pour améliorer leur quotidien. [img_0] Aujourd\'hui, la Braderie est devenue la plus grande fête de La Chaux-de-Fonds. Elle attire non seulement les habitants de la ville, mais aussi ceux des environs, attirés par les défilés et les animations.',
 		'refs': {
 			'img_0': 'https://le-o.ch/wp-content/uploads/elementor/thumbs/photo_carrousel_c_-Museedhistoire-pu41vrk9i0c9bmx3akwc6m10cuycwfi87ae70fdkxc.jpg'
 		},
-        'tags': [],
+        'tags': [
+			'economy',
+			'social'
+		],
 	},
 	{
-		'name': 'Création du Conservatoire de musique de La Chaux-de-Fonds',
+		'name': 'Conservatoire de musique',
 		'date': 1927,
 		'type': Event.Types.sport,
 		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
 		'refs': {
 			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
 		},
-        'tags': [],
+        'tags': [
+			'sport',
+			'music',
+			'social'
+		],
 	},
 	{
 		'name': 'Test',
@@ -154,9 +77,13 @@ const events = [
 		'refs': {
 			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
 		},
-        'tags': [],
+        'tags': [
+			'personnality'
+		],
 	}
 ]
+
+let events = []
 // [
 //     {
 //         'name': 'Guerre',
@@ -248,6 +175,26 @@ const TIMELINE_WIDTH = 100
  * The gap between two dates displayed in the timeline
  */
 const TIMELINE_GAP_YEARS = 25
+
+/**
+ * Apply filters to the events
+ * @param {string[]} filters The filters to apply
+ * @return {Set<object>} The filtered events
+ */
+const filterDivs = filters => {
+	if(filters.length === 0) {
+		return E
+	}
+	const filtered_events = []
+	for(const event of E) {
+		for(const tag of event.tags) {
+			if(filters.includes(tag)) {
+				filtered_events.push(event)
+			}
+		}
+	}
+	return [...new Set(filtered_events)]
+}
 
 /**
  * Creates the inside div of an event div
@@ -359,9 +306,9 @@ const toggleExtend = (event, full_div, is_left) => {
 		const text_div = document.createElement('div')
 		text_div.classList.add('text-div')
 		text_div.innerHTML = `${event.text}`
+		text_div.style.textAlign = 'justify'
 		text_div.style.backgroundColor = event.color
 		text_div.style.padding = '15px'
-		text_div.style.color = 'white' // Change to dynamic
 		text_div.style.fontSize = '16px'
 		text_div.style.width = 'calc(100% - 95px)'
 		overdiv.appendChild(text_div)
@@ -423,6 +370,7 @@ const makeEvent = (event, is_left) => {
 	const h_offset = (MAX_YEAR - event.date) * H_UNIT_OFFSET + 20
 	
 	event.color = Event.Colors(event.type)
+	event.text_color = Event.TextColors(event.type)
 	
 	/**
 	 * Div containing the event
@@ -436,6 +384,7 @@ const makeEvent = (event, is_left) => {
 	full_div.style.display = 'flex'
 	full_div.style.flexDirection = 'column'
 	full_div.style.justifyContent = 'start'
+	full_div.style.color = event.text_color
 	
 	/**
 	 * Div containing the event's content
@@ -489,6 +438,7 @@ window.onload = () => {
 	}
 
 	// Sort events by date inversed but then display them in the right order
+	events = filterDivs(['music', 'social'])
 	events.sort(compareByDate)
     for(let i = 0; i < events.length; i++) {
         const event = events[i]
