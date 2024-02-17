@@ -51,7 +51,7 @@ const E = [
 			'img_0': 'https://le-o.ch/wp-content/uploads/elementor/thumbs/photo_carrousel_c_-Museedhistoire-pu41vrk9i0c9bmx3akwc6m10cuycwfi87ae70fdkxc.jpg'
 		},
         'tags': [
-			'economy',
+			'économie',
 			'social'
 		],
 	},
@@ -65,7 +65,7 @@ const E = [
 		},
         'tags': [
 			'sport',
-			'music',
+			'musique',
 			'social'
 		],
 	},
@@ -78,7 +78,7 @@ const E = [
 			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
 		},
         'tags': [
-			'personnality'
+			'personnalité'
 		],
 	}
 ]
@@ -131,6 +131,35 @@ let events = []
 //         'tags': [],
 //     },
 // ]
+
+/**
+ * List of filters
+ */
+const filters = Array.from(new Set(E.map(el => el.tags).flat()))
+
+/**
+ * The user filters div
+ */
+const user_filters = document.querySelector('#user-filters')
+/**
+ * The input element
+ */
+const input = document.querySelector('#input')
+/**
+ * The results div
+ */
+const results = document.querySelector('#results')
+
+/**
+ * The index of the selected filter
+ */
+let index = 0
+/**
+ * Whether the input is in the add event state
+ */
+let isAddEvent = false
+
+const active_filters = []
 
 /**
  * Parse an event an replace the references by their HTML equivalent
@@ -425,6 +454,20 @@ const makeEvent = (event, is_left) => {
  */
 const compareByDate = (a, b) => b.date - a.date
 
+const refreshEvents = () => {
+	document.querySelector('#left-events').innerHTML = ''
+	document.querySelector('#right-events').innerHTML = ''
+	events = filterDivs(active_filters)
+	console.log(events)
+	events.sort(compareByDate)
+	for(let i = 0; i < events.length; i++) {
+		const event = events[i]
+		prepareEvent(event)
+		event.extended = false
+		makeEvent(event, i % 2)
+	}
+}
+
 window.onload = () => {
 	document.querySelector('html').style.backgroundImage = `url('src/img/background${Math.floor(Math.random() * 5)}.jpg')`
 	// Set height of the main container
@@ -438,14 +481,7 @@ window.onload = () => {
 	}
 
 	// Sort events by date inversed but then display them in the right order
-	events = filterDivs(['music', 'social'])
-	events.sort(compareByDate)
-    for(let i = 0; i < events.length; i++) {
-        const event = events[i]
-		prepareEvent(event)
-		event.extended = false
-        makeEvent(event, i % 2)
-    }
+	refreshEvents()
 
 	// Set position of the milestones
 	for(const milestone of document.querySelectorAll('#timeline > div')) {
@@ -480,6 +516,122 @@ window.onload = () => {
 		text.style.margin = '0'
 		child.appendChild(text)
 		colorIndex.appendChild(child)
-		console.log(child)
 	}
+
+	input.addEventListener('input', refreshResults)
+	input.addEventListener('focusin', () => {
+		user_filters.innerHTML = ''
+		active_filters.map(el => {
+			user_filters.appendChild(createUserFilter(el))
+		})
+		refreshResults()
+		highlightDiv(0)
+	})
+	input.addEventListener('focusout', e => {
+		setTimeout(() => {
+			if(!isAddEvent) {
+				results.innerHTML = '' 
+			}
+			isAddEvent = false
+		}, 250)
+	})
+	input.addEventListener('keydown', keyListener)
+}
+
+//
+// Filters
+//
+
+const highlightDiv = (new_index) => {
+	if(!results.children[index]) {
+		return
+	}
+	while(new_index >= results.children.length) {
+		new_index -= results.children.length
+	}
+	while(new_index < 0) {
+		new_index += results.children.length
+	}
+	results.children[index].classList.remove('active')
+	results.children[new_index].classList.add('active')
+	index = new_index
+}
+
+const addEvent = () => {
+	active_filters.push(results.children[index].innerHTML)
+	input.value = ''
+	user_filters.innerHTML = ''
+	active_filters.map(el => {
+		user_filters.appendChild(createUserFilter(el))
+	})
+	refreshResults()
+	refreshEvents()
+}
+
+const refreshResults = () => {
+	index = 0
+	results.innerHTML = ''
+	if(filters.length === active_filters.length) {
+		const no_more = document.createElement('div')
+		no_more.innerHTML = 'Tous les filtres sont appliqués'
+		results.appendChild(no_more)
+		highlightDiv(0)
+		return
+	}
+	for(const filter of filters.filter(el => !active_filters.includes(el))) {
+		if(filter.startsWith(input.value)) {
+			const filterdiv = document.createElement('div')
+			filterdiv.innerHTML = filter
+			results.appendChild(filterdiv)
+		}
+	}
+	highlightDiv(0)
+	for(const [i, res] of Object.entries(document.querySelectorAll('#results > div'))) {
+		res.addEventListener('click', () => {
+		isAddEvent = true
+		index = i
+		addEvent()
+		input.focus()
+		})
+	}
+}
+
+const keyListener = e => {
+	switch(e.key) {
+		case 'ArrowUp':
+		case 'ArrowDown':
+			e.preventDefault()
+			highlightDiv(index + (e.key === 'ArrowDown' ? 1 : - 1))
+			input.value = document.querySelector('.active').innerHTML
+			input.focus()
+			break
+		case 'Tab':
+			e.preventDefault()
+			addEvent()
+			break
+		case 'Backspace':
+			refreshResults()
+			break
+	}
+}
+
+const createUserFilter = (name) => {
+	const userFilter = document.createElement('div')
+	const text = document.createElement('p')
+	const x = document.createElement('button')
+	text.innerHTML = name
+	x.innerHTML = 'x'
+	x.classList.add('x')
+	x.addEventListener('click', () => {
+		active_filters.splice(active_filters.indexOf(name), 1);
+		isAddEvent = true
+		refreshResults()
+		userFilter.remove()
+		input.focus()
+		refreshEvents()
+	})
+	userFilter.classList.add('user-filter')
+	userFilter.appendChild(text)
+	userFilter.appendChild(x)
+	return userFilter;
 }

@@ -12,6 +12,7 @@
     --midnight-green: #073b4c; /* Frise */
     --blue-ncs: #118ab2; /* Art/Architecture */
     --orange: #ff964f; /* Personnalités */
+	--primary-color: #4dff7c; /* Filters */
 }
 
 * {
@@ -25,6 +26,7 @@ html {
 
 body {
     margin: 0;
+	position: relative;
 }
 
 h1 {
@@ -83,4 +85,83 @@ main {
 
 .full-div {
     border-radius: 10px;
+}
+
+h2 {
+	color: white;
+}
+
+#filter-selector {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+    background-color: #041E2688;
+    backdrop-filter: blur(5px);
+	border-radius: 10px;
+	padding: 0 15px 15px 15px;
+    position: fixed;
+}
+
+#fts {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	gap: 5px;
+}
+
+#user-filters {
+	display: flex;
+	flex-flow:row wrap;
+	width: 200px;
+	gap: 5px;
+	user-select: none;
+}
+
+.user-filter {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	height: 30px;
+	background-color: var(--primary-color);
+	border-radius: 10px;
+	padding: 2.5px 7.5px;
+}
+
+.user-filter > button {
+	background-color: transparent;
+	border: transparent;
+	color: red;
+	cursor: pointer;
+}
+
+#input {
+	appearance: none;
+	border: none;
+	outline: none;
+	width: 200px;
+	height: 30px;
+	border: 1px solid var(--primary-color);
+	border-radius: 5px 5px 0 0;
+	font-size: 18px;
+}
+
+#results {
+	width: 201.25px;
+	border: 2.5px solid var(--primary-color);
+	border-radius: 0 0 5px 5px;
+}
+
+#results > div {
+	cursor: pointer;
+	user-select: none;
+	padding: 3px;
+}
+
+.x {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.active {
+	background-color: var(--primary-color);
 }
