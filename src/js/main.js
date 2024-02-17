@@ -30,107 +30,78 @@ const Event =  {
  */
 const E = [
     {
-        'name': 'Création du HCC',
+        'name': 'Maison Blanche',
+        'date': 1912,
+        'type': Event.Types.artch,
+        'text': 'La Maison Blanche, aussi appelée villa Jeanneret-Perret, est conçue par l’architecte Le Corbusier et construite en 1912. Se situant sur le haut de la ville de la Chaux-de-Fonds avec une architecture unique, cette maison est le résultat de nombreuses inspirations dues à ses voyages.[img_0]Dans un premier temps destinée aux parents du Corbusier, elle sera vendue peu après, en 1919, puis plusieurs propriétaires s’y succéderont. C’est en 2000 que la maison sera rachetée par une association et ouvrira ses portes au public en 2005',
+        'refs': {
+            'img_0':'https://maisonblanche.ch/wp-content/uploads/2020/03/amb_hiver.jpg'
+		},
+        'tags': [
+			'architecture',
+			'le Corbusier',
+			'la Chaux-de-Fonds'
+		],
+    },
+    {
+        'name': 'Hockey club la Chaux-de-Fonds',
         'date': 1919,
         'type': Event.Types.sport,
-        'text': 'Le 6 février 1919 la section hockey apparaît pour la première fois dans la ville. À cette époque la mauvaise qualité de glace pousse parfois le club à déménager sur le Lac des Taillères. Il faudra attendre 1951 pour que le club soit pour la première fois champion de ligue nationale B (LNB 2ème division suisse). Après 4 titres en 2ème division et un aller-retour entre la ligue nationale A (LNA 1er division suisse) et la B, le club fêtera son premier titre de LNA fin de saison 1967/1968. Les 5 saisons suivantes seront un énorme succès avec 5 nouveaux titres de champion Suisse. Aujourd’hui le club Chaux-de-Fonnier évolue en 2ème division suisse et est soutenu par toute une région.',
+        'text': 'Le 6 février 1919 la section hockey apparaît pour la première fois dans la ville. À cette époque la mauvaise qualité de glace, pousse le club à déménager quand il le faut sur le Lac des Taillères. Il faudra attendre 1951 pour que le club soit pour la première fois champion de Swiss League (2ème division suisse). Après 4 titres en 2ème division, le club fêtera son premier titre de National League (1er division suisse) fin de saison 1967/1968. Les 5 saisons suivantes seront un énorme succès avec 5 nouveaux titres de champion Suisse. Aujourd’hui le club Chaux-de-Fonnier évolue en 2ème division suisse et est soutenu par toute une région.<br /> La patinoire artificielle des Mélèzes créée en 1953, sera couverte en 1968.',
         'refs': {
 			
 		},
         'tags': [
+			'la Chaux-de-Fonds',
+			'hockey',
 			'sport',
-			'social'
+			'loisirs'
 		],
     },
-	{
-		'name': 'Première Braderie',
-		'date': 1933,
-		'type': Event.Types.economy,
-		'text': 'Lors de la Grande Dépression à La Chaux-de-Fonds, où 8000 personnes étaient sans emploi parmi les 40 000 habitants, la Braderie a été lancée. À cette époque, il y avait un surplus de marchandises invendues. La fête a permis aux commerçants de vendre ces articles à bas prix, offrant ainsi aux travailleurs la possibilité d\'acheter des choses à moindre coût pour améliorer leur quotidien. [img_0] Aujourd\'hui, la Braderie est devenue la plus grande fête de La Chaux-de-Fonds. Elle attire non seulement les habitants de la ville, mais aussi ceux des environs, attirés par les défilés et les animations.',
-		'refs': {
-			'img_0': 'https://le-o.ch/wp-content/uploads/elementor/thumbs/photo_carrousel_c_-Museedhistoire-pu41vrk9i0c9bmx3akwc6m10cuycwfi87ae70fdkxc.jpg'
+    {
+        'name': 'Première Braderie',
+        'date': 1932,
+        'type': Event.Types.economy,
+        'text': 'La Braderie a été créée en 1932 pendant une grande crise économique qui touchait la Chaux-de fonds. La ville, qui comptait beaucoup de chômeurs et avec de grandes quantités de marchandises invendues, a décidé de créer une grande foire qui permettrait aux commerçants de vider leurs stocks. Aujourd’hui la Braderie est une des plus grandes fête Chaux-de-Fonnière et réunit des habitants de toute la région pour ses animations et ses cortèges.[img_0]',
+        'refs': {
+           'img_0':'https://le-o.ch/wp-content/uploads/2022/09/photo_carrousel_c_-Museedhistoire.jpg' 
 		},
         'tags': [
 			'économie',
-			'social'
+			'loisirs',
+			'la Chaux-de-Fonds'
 		],
-	},
-	{
-		'name': 'Conservatoire de musique',
-		'date': 1927,
-		'type': Event.Types.sport,
-		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
-		'refs': {
-			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
+    },
+    {
+        'name': 'Première femme au Grand Conseil',
+        'date': 1960,
+        'type': Event.Types.politics,
+        'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ainsi ouvrent l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Première suissesse élue dans un parlement cantonal qui a lutté pour l’égalité des hommes et des femmes.',
+        'refs': {
+           'img_0':'https://imagesdupatrimoine.ch/wp-content/uploads/2022/02/La-premiere-suissesse-a-sieger-dans-un-legislatif-cantonal.jpg' 
 		},
         'tags': [
+			'politique',
+			'droits des femmes',
+		],
+    },
+    {
+        'name': 'Tremplin de la Combe-Girard',
+        'date': 1932,
+        'type': Event.Types.sport,
+        'text': 'La construction de ce tremplin a fait naître un nouveau sport dans le Canton, avec un engouement gigantesque. La population se ruait en bas de la piste afin de contempler les sauts des skieurs. Le record du Tremplin est de 86,5 mètres détenus par un Suisse. Le Tremplin de la Combe-Girard est parmi les plus légendaires de Suisse. En effet, durant 60 ans, il accueillera de nombreuses compétitions dont une très célèbre, la Tournée Suisse des quatre tremplins. Puis dans les années 90 le tremplin sera laissé à l’abandon et se détériorera avec le temps.',
+        'refs': {
+			
+		},
+        'tags': [
+			'le Locle',
 			'sport',
-			'musique',
-			'social'
+			'loisirs'
 		],
-	},
-	{
-		'name': 'Test',
-		'date': 1990,
-		'type': Event.Types.personnality,
-		'text': 'Grâce à Chales Faller, c’est en 1927 que nait l’Ecole de musique de La Chaux-de-Fonds qui prendra le nom de Conservatoire de musique de La Chaux-De-Fonds en 1931. [img_0] En 1934 le Conservatoire déménage dans son bâtiment actuel où y sont aménagées de nombreuses salles et studios. Une salle s’appelle « Salle Faller » en hommage au créateur du conservatoire.',
-		'refs': {
-			'img_0': 'https://patrimoine.versoix.com/pxo305/pxo_content/medias_fck/image/CharlesFaller.png'
-		},
-        'tags': [
-			'personnalité'
-		],
-	}
+    }
 ]
 
 let events = []
-// [
-//     {
-//         'name': 'Guerre',
-//         'date': 1998,
-//         'type': Event.Types.conflict,
-//         'text': 'Lorem ipsum dolor sit amet, [consectetur adipiscing elit], sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [img_0]',
-//         'refs': {
-// 			'img_0': 'arrow.png',
-// 			'consectetur adipiscing elit': 'https://www.google.com',
-// 		},
-//         'tags': [],
-//     },
-//     {
-//         'name': 'Coupe du Monde',
-//         'date': 1995,
-//         'type': Event.Types.sport,
-//         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//         'refs': {},
-//         'tags': [],
-//     },
-//     {
-//         'name': 'Élections',
-//         'date': 1991,
-//         'type': Event.Types.politics,
-//         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//         'refs': {},
-//         'tags': [],
-//     },
-//     {
-//         'name': 'Villa turque',
-//         'date': 1994,
-//         'type': Event.Types.artch,
-//         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod [img_villa] tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//         'refs': {
-// 			'img_villa': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/CF05.jpg/1200px-CF05.jpg'
-// 		},
-//         'tags': [],
-//     },
-//     {
-//         'name': 'Crash boursier',
-//         'date': 1988,
-//         'type': Event.Types.economy,
-//         'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-//         'refs': {},
-//         'tags': [],
-//     },
-// ]
 
 /**
  * List of filters
