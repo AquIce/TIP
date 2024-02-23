@@ -39,7 +39,7 @@ const E = [
 			
 		},
         'tags': [
-			'architecture',
+			'art / architecture',
 			'le Corbusier',
 			'la Chaux-de-Fonds'
 		],
@@ -51,7 +51,6 @@ const E = [
         'text': 'Le 6 février 1919 la section hockey apparaît pour la première fois dans la ville. À cette époque la mauvaise qualité de glace, pousse le club à déménager quand il le faut sur le Lac des Taillères. Il faudra attendre 1951 pour que le club soit pour la première fois champion de Swiss League (2ème division suisse). Après 4 titres en 2ème division, le club fêtera son premier titre de National League (1er division suisse) fin de saison 1967/1968. Les 5 saisons suivantes seront un énorme succès avec 5 nouveaux titres de champion Suisse. Aujourd’hui le club Chaux-de-Fonnier évolue en 2ème division suisse et est soutenu par toute une région.<br /> La patinoire artificielle des Mélèzes créée en 1953, sera couverte en 1968.',
         'refs': {
             
-			
 		},
         'tags': [
 			'la Chaux-de-Fonds',
@@ -71,7 +70,7 @@ const E = [
 			
 		},
         'tags': [
-			'économie',
+			'economie',
 			'loisirs',
 			'la Chaux-de-Fonds'
 		],
@@ -152,7 +151,8 @@ const E = [
 		},
         'tags': [
 			'la Chaux-de-Fonds',
-			'catastrophe'
+			'catastrophe',
+			'conflit'
 		],
     },
 	
@@ -167,7 +167,7 @@ const E = [
 		},
         'tags': [
 			'la Chaux-de-Fonds',
-			'économie',
+			'economie',
 			'horlogerie'
 		],
     },
@@ -202,7 +202,7 @@ let index = 0
  */
 let isAddEvent = false
 
-const active_filters = []
+let active_filters = []
 
 /**
  * Parse an event an replace the references by their HTML equivalent
@@ -511,6 +511,21 @@ const refreshEvents = () => {
 	}
 }
 
+const color_filter_listener = e => {
+	sel = !sel;
+	if(sel) {
+		e.target.style.color = color
+		e.target.style.fontWeight = 'bold'
+		active_filters.push(theme.toLowerCase())
+		refreshEvents()
+	} else {
+		e.target.style.color = 'inherit'
+		e.target.style.fontWeight = 'normal'
+		active_filters = active_filters.filter(el => el !== theme.toLowerCase())
+		refreshEvents()
+	}
+}
+
 window.onload = () => {
 	document.querySelector('html').style.backgroundImage = `url('src/img/background${Math.floor(Math.random() * 5)}.jpg')`
 	// Set height of the main container
@@ -545,6 +560,10 @@ window.onload = () => {
 	const colorIndex = document.querySelector('#color-index')
 	for(const [color, theme] of Object.entries(colors)) {
 		const child = document.createElement('div')
+		let sel = false;
+		child.style.cursor = 'pointer'
+		child.style.userSelect = 'none'
+		child.addEventListener('click', color_filter_listener)
 		child.style.display = 'flex'
 		child.style.gap = '10px'
 		child.style.marginBottom = '5px'
