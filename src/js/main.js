@@ -171,6 +171,20 @@ const E = [
 			'horlogerie'
 		],
     },
+	{
+        'name': 'Tour Espacité',
+        'date': 1994,
+        'type': Event.Types.artch,
+        'text': 'La construction de la tour Espacité a commencé en 1990, après 4 ans de travaux la tour comptera 14 étages et culminera à plus de 60m de hauteur. Construite sur la rue Léopold-Robert, elle offre une vue de 360° sur toute la ville de la Chaux-de-Fonds. La construction de la tour a commencé après un concours national, lancée par la ville à l’occasion du 100e anniversaire du Corbusier. La tour Espacité est sans doute l’un des symboles de la métropole horlogère.[img_0]',
+        'refs': {
+           'img_0':'https://torpille.ch/wp-content/uploads/2020/10/tour-espacite-chaux-de-fonds-2-1200x821.jpg'
+        },
+        'tags': [
+		'art / architecture',
+            'la Chaux-de-Fonds',
+            'le Corbusier'
+        ],
+    },
 ]
 
 let events = []
