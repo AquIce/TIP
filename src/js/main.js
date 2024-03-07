@@ -64,7 +64,7 @@ const E = [
         'name': 'Première Braderie',
         'date': 1932,
         'type': Event.Types.economy,
-        'text': 'La Braderie a été créée en 1932 pendant une grande crise économique qui touchait la Chaux-de fonds. La ville, qui comptait beaucoup de chômeurs et avec de grandes quantités de marchandises invendues, a décidé de créer une grande foire qui permettrait aux commerçants de vider leurs stocks. Aujourd’hui la Braderie est une des plus grandes fête Chaux-de-Fonnière et réunit des habitants de toute la région pour ses animations et ses cortèges.[img_0]',
+        'text': 'La Braderie a été créée en 1932 pendant une grande crise économique qui touchait la Chaux-de fonds. La ville, qui comptait beaucoup de chômeurs et avec de grandes quantités de marchandises invendues, a décidé de créer une grande foire qui permettrait aux commerçants de vider leurs stocks. Aujourd’hui la Braderie est une des plus grandes fête chaux-de-fonnière et réunit les habitants de toute la région pour ses animations et ses cortèges.[img_0]',
         'refs': {
            'img_0':'https://le-o.ch/wp-content/uploads/2022/09/photo_carrousel_c_-Museedhistoire.jpg' 
 			
@@ -80,7 +80,7 @@ const E = [
         'name': 'Première femme au Grand Conseil',
         'date': 1960,
         'type': Event.Types.politics,
-        'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ainsi ouvrent l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Première suissesse élue dans un parlement cantonal qui a lutté pour l’égalité des hommes et des femmes.',
+        'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ouvrent ainsi l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Elle a lutté pour l’égalité des hommes et des femmes.',
         'refs': {
            'img_0':'https://imagesdupatrimoine.ch/wp-content/uploads/2022/02/La-premiere-suissesse-a-sieger-dans-un-legislatif-cantonal.jpg' 
 			
@@ -109,7 +109,7 @@ const E = [
         'name': 'Nouvelle gare à la Chaux-de-Fonds',
         'date': 1903,
         'type': Event.Types.artch,
-        'text': 'Au milieu du 19ème siècle, la première gare de la ville fut construite pour des raisons commerciales et afin de montrer que la ville est en plein développement industriel. Cette gare sera réaménagée plusieurs fois jusqu’en 1901. Cependant l’évolution industrielle trop importante de la ville fit que la gare n’était plus suffisante. C’est ainsi qu’en 1903 commence les travaux de la nouvelle gare. Inauguré en 1904, la nouvelle gare de la Chaux-de-Fonds ne changera presque plus jusqu’à nos jours.[img_0]',
+        'text': 'Au milieu du 19ème siècle, la première gare de la ville fut construite pour des raisons commerciales et afin de montrer que la ville est en plein développement industriel. Cette gare sera réaménagée plusieurs fois jusqu’en 1901. Cependant l’évolution industrielle trop importante de la ville fit que la gare n’était plus suffisante. C’est ainsi qu’en 1903 les travaux commencent. Inaugurée en 1904, la nouvelle gare de la Chaux-de-Fonds ne changera presque plus jusqu’à nos jours.[img_0]',
         'refs': {
            'img_0':'https://imagesdupatrimoine.ch/wp-content/uploads/2022/02/La-nouvelle-gare-de-La-Chaux-de-Fonds.jpg'
 		},
@@ -345,6 +345,7 @@ const findName = name => {
  */
 const toggleExtend = (event, full_div, is_left) => {
 	full_div.firstChild.style.flexDirection = full_div.firstChild.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse'
+	full_div.firstChild.style.width = '100%'
 	full_div.firstChild.firstChild.style.rotate = full_div.firstChild.firstChild.style.rotate === '180deg' ? '0deg' : '180deg'
 	if(event.extended) {
 		destroyContent(full_div, false)
