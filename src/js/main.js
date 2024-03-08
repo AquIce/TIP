@@ -80,7 +80,11 @@ const E = [
         'name': 'Première femme au Grand Conseil',
         'date': 1960,
         'type': Event.Types.politics,
+<<<<<<< HEAD
+        'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ouvrent ainsi l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Elle a lutté pour l’égalité des hommes et des femmes. [img_0]',
+=======
         'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ouvrent ainsi l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Elle a lutté pour l’égalité des hommes et des femmes.',
+>>>>>>> ac1c00a97082a5a85c3de56bcd9e1f63126c5392
         'refs': {
            'img_0':'https://imagesdupatrimoine.ch/wp-content/uploads/2022/02/La-premiere-suissesse-a-sieger-dans-un-legislatif-cantonal.jpg' 
 			
@@ -189,7 +193,11 @@ const E = [
         'name': 'La Plage des Six Pompes',
         'date': 1993,
         'type': Event.Types.economy,
+<<<<<<< HEAD
+        'text': 'La toute première édition du festival a eu lieu en 1993 sous le nom de « La Plage du Marché ». Plus tard, le festival a été rebaptisé « La Plage Le Corbusier », avant d\'adopter finalement le nom que nous connaissons aujourd\'hui, « La Plage des Six Pompes ». L\'objectif des organisateurs de l\'époque restait le même : offrir une animation culturelle estivale gratuite pour les habitants de la ville.[img_0]',
+=======
         'text': 'La toute première édition du festival a eu lieu en 1993 sous le nom de « La Plage du Marché ». Plus tard, le festival a été rebaptisé « La Plage Le Corbusier », avant d'adopter finalement le nom que nous connaissons aujourd'hui, « La Plage des Six Pompes ». L'objectif des organisateurs de l'époque restait le même : offrir une animation culturelle estivale gratuite pour les habitants de la ville.[img_0]',
+>>>>>>> ac1c00a97082a5a85c3de56bcd9e1f63126c5392
         'refs': {
            'img_0':'https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg'
         },
@@ -663,10 +671,6 @@ const refreshResults = () => {
 	index = 0
 	results.innerHTML = ''
 	if(filters.length === active_filters.length) {
-		const no_more = document.createElement('div')
-		no_more.innerHTML = 'Tous les filtres sont appliqués'
-		results.appendChild(no_more)
-		highlightDiv(0)
 		return
 	}
 	for(const filter of filters.filter(el => !active_filters.includes(el)).sort((a, b) => a[0] > b[0])) {
