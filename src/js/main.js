@@ -242,7 +242,7 @@ const prepareEvent = event => {
 			if(ref.startsWith('img_')) {
 				// Preload the image to prevent height calculation problems
 				const img = new Image()
-				const img_src_text = event.refs[ref].startsWith('http') ? `<a href=${event.refs[ref]}>${event.refs[ref]}</a>` : '<a href="https://mhcdf.ch/">Musée d\'histoire de la Chaux-de-Fonds</a>'
+				const img_src_text = event.refs[ref].startsWith('http') ? events.refs[ref].includes('cdn.discordapp') ? `<a href="https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg"}>https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg</a>` : `<a href=${event.refs[ref]}>${event.refs[ref]}</a>` : '<a href="https://mhcdf.ch/">Musée d\'histoire de la Chaux-de-Fonds</a>'
 				img.src = `${!event.refs[ref].startsWith('http') ? './src/img/' : ''}${event.refs[ref]}`
 				event.text = event.text.replace(`[${ref}]`, `<figure><img width="100%" src="${img.src}" alt="${event.refs[ref].split('.')[0]}"><figcaption>${img_src_text}</figcaption></figure>`)
 			} else {
