@@ -373,7 +373,6 @@ const findName = name => {
  */
 const toggleExtend = (event, full_div, is_left) => {
 	full_div.firstChild.style.flexDirection = full_div.firstChild.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse'
-	full_div.firstChild.style.width = '100%'
 	full_div.firstChild.firstChild.style.rotate = full_div.firstChild.firstChild.style.rotate === '180deg' ? '0deg' : '180deg'
 	if(event.extended) {
 		destroyContent(full_div, false)
