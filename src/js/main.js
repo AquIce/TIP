@@ -80,11 +80,7 @@ const E = [
         'name': 'Première femme au Grand Conseil',
         'date': 1960,
         'type': Event.Types.politics,
-<<<<<<< HEAD
         'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ouvrent ainsi l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Elle a lutté pour l’égalité des hommes et des femmes. [img_0]',
-=======
-        'text': 'En 1959, les Neuchâtelois acceptent de donner le droit de vote aux femmes et ouvrent ainsi l’opportunité aux électrices neuchâteloises de se présenter. Une année après, la socialiste Raymond Schweizer est la première femme élue en Suisse, à la faveur d’une élection partielle au Grand Conseil, elle y restera jusqu’en 1969. Elle a lutté pour l’égalité des hommes et des femmes.',
->>>>>>> ac1c00a97082a5a85c3de56bcd9e1f63126c5392
         'refs': {
            'img_0':'https://imagesdupatrimoine.ch/wp-content/uploads/2022/02/La-premiere-suissesse-a-sieger-dans-un-legislatif-cantonal.jpg' 
 			
