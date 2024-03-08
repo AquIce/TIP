@@ -185,6 +185,20 @@ const E = [
             'le Corbusier'
         ],
     },
+	{
+        'name': 'La Plage des Six Pompes',
+        'date': 1993,
+        'type': Event.Types.economy,
+        'text': 'La toute première édition du festival a eu lieu en 1993 sous le nom de « La Plage du Marché ». Plus tard, le festival a été rebaptisé « La Plage Le Corbusier », avant d'adopter finalement le nom que nous connaissons aujourd'hui, « La Plage des Six Pompes ». L'objectif des organisateurs de l'époque restait le même : offrir une animation culturelle estivale gratuite pour les habitants de la ville.[img_0]',
+        'refs': {
+           'img_0':'https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg'
+        },
+        'tags': [
+            'la Chaux-de-Fonds',
+            'loisirs',
+            'economie'
+        ],
+    },
 ]
 
 let events = []
