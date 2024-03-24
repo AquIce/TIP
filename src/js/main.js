@@ -191,7 +191,7 @@ const E = [
         'type': Event.Types.economy,
         'text': 'La toute première édition du festival a eu lieu en 1993 sous le nom de « La Plage du Marché ». Plus tard, le festival a été rebaptisé « La Plage Le Corbusier », avant d\'adopter finalement le nom que nous connaissons aujourd\'hui, « La Plage des Six Pompes ». L\'objectif des organisateurs de l\'époque restait le même : offrir une animation culturelle estivale gratuite pour les habitants de la ville.[img_0]',
         'refs': {
-           'img_0':'https://cdn.discordapp.com/attachments/879294357075804200/1215454224825983046/la-plage-affiche-1993-425x636.webp?ex=65fccef5&is=65ea59f5&hm=f14b71c82fa0bb3529609dc93c6634ef2b33d1b99db9821d3fc1a7e1d0a828bf&'
+           'img_0':'https://media.discordapp.net/attachments/879294357075804200/1215454224825983046/la-plage-affiche-1993-425x636.webp?ex=660f43f5&is=65fccef5&hm=89373909686d313820c20296477605e94ba342140cea3f3a694997dcfc385de6&=&format=webp&width=637&height=954'
         },
         'tags': [
             'la Chaux-de-Fonds',
@@ -242,7 +242,7 @@ const prepareEvent = event => {
 			if(ref.startsWith('img_')) {
 				// Preload the image to prevent height calculation problems
 				const img = new Image()
-				const img_src_text = event.refs[ref].startsWith('http') ? event.refs[ref].includes('cdn.discordapp') ? `<a href="https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg"}>https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg</a>` : `<a href=${event.refs[ref]}>${event.refs[ref]}</a>` : '<a href="https://mhcdf.ch/">Musée d\'histoire de la Chaux-de-Fonds</a>'
+				const img_src_text = event.refs[ref].startsWith('http') ? event.refs[ref].includes('discord') ? `<a href="https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg"}>https://laplage.ch/wp-content/uploads/2022/02/la-plage-affiche-1993-425x636.jpeg</a>` : `<a href=${event.refs[ref]}>${event.refs[ref]}</a>` : '<a href="https://mhcdf.ch/">Musée d\'histoire de la Chaux-de-Fonds</a>'
 				img.src = `${!event.refs[ref].startsWith('http') ? './src/img/' : ''}${event.refs[ref]}`
 				event.text = event.text.replace(`[${ref}]`, `<figure><img width="100%" src="${img.src}" alt="${event.refs[ref].split('.')[0]}"><figcaption>${img_src_text}</figcaption></figure>`)
 			} else {
